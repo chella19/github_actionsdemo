@@ -1,0 +1,49 @@
+name: Actions use case
+on: 
+ workflow_dispatch:
+
+jobs:
+    job1-install-php:
+      runs-on: ubuntu-22.04
+      steps:
+        - name: Update apt repo
+          run: sudo apt update
+        - name: Install php
+          run: sudo apt install -y php
+        - name: php Version
+          run: php --version
+    job2-install-php:
+      runs-on: ubuntu-24.04
+      steps:
+        - name: Update apt repo
+          run: |
+            sudo apt update
+            sudo apt install -y php
+            php --version
+    job3-Install-with-actions:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Install python
+          uses: actions/setup-python@v7
+          with:
+            python-version: '3.13'
+        - name: Install Java
+          uses: actions/setup-Java@v5
+          with:
+            java-version: '25'
+            distribution: 'temurin'
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
