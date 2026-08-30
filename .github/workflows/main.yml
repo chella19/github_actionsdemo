@@ -7,7 +7,7 @@ jobs:
         - name: Update apt repo
           run: sudo apt update
         - name: Install php
-          run: sudo apt install -y php
+          run: sudo apt install php
         - name: php Version
           run: php --version
       
